@@ -63,11 +63,11 @@ systenctl status ssh
 ```bash
 ssh "yourusername"@192.168.x.x
 ```
-Youll be prompted to enter the remote server credential(password)
+You'll be prompted to enter the remote server credential(password)
 This is crucial steps prior the ansible automation process, when successfully login to remote server
  proceed to next workflow.
 
-### 5. Controller node SSH keyusing using ed25519 algorithm
+### 5. Controller node SSH key using ed25519 algorithm
 
 ```bash
 ssh-keygen -t ed25519
@@ -80,7 +80,8 @@ ssh-copy-id "yourusername"@192.168.x.x
 
 ### 7. Test the reomote connection
 
-At this stage we shouldnt be asked to enter the remote server credential(password), login would automatically!
+At this stage we shouldnt be asked to enter the remote server credential(password), login would be established
+to the remote servers automatically!
 
 ```bash
 ssh "yourusername"@192.168.x.x   
@@ -89,7 +90,7 @@ Please note "yourusername" is the the remote server username
 
 ### 8. Create your project
 
-### 9. Secure your project and neccary permission
+### 9. Secure your project and apply neccary permission
 
 ### 10. create Hosts file
 
@@ -134,6 +135,6 @@ Success: All servers uptime were remotely monitored (please see the screenshot i
 - Github
 - Private IP
 - UFW firewall
-- ICMP ech requests
+- ICMP echo requests
 - 3 ways handshakes 
 - ed25519 algorithm
