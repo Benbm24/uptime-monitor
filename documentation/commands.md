@@ -10,15 +10,15 @@ A Linux controller node was configured to communicate with three remote Linux se
 
 ### 1. Configure static IP addresses
 
-Each managed node was assigned a static private IP address to ensure consistent connectivity and another layer of 
-security.
+Each managed node was assigned a static private IP address to ensure consistent connectivity and provide  another
+layer of security.
 
-192.168.x.x controler node
+192.168.x.x controller node
 192.168.x.x server 1
 192.168.x.x server 2
 192.168.x.x server 3
 
-### 2. Controler node configuration
+### 2. Controller node configuration
 
 ```bash
 sudo apt update && sudo apt upgrade
@@ -58,15 +58,16 @@ systenctl status ssh
 ```
 
 
-### 4. Test controller node for all 3  remote shh 
+### 4. Test controller node for all 3  remote servers
 
 ```bash
 ssh "yourusername"@192.168.x.x
 ```
 Youll be prompted to enter the remote server credential(password)
-This is crucial steps prior the ansible automation process, when succed proceed to next workflow.
+This is crucial steps prior the ansible automation process, when successfully login to remote server
+ proceed to next workflow.
 
-### 5. Controler node SSH key ed25519
+### 5. Controller node SSH keyusing using ed25519 algorithm
 
 ```bash
 ssh-keygen -t ed25519
@@ -79,7 +80,7 @@ ssh-copy-id "yourusername"@192.168.x.x
 
 ### 7. Test the reomote connection
 
-At this stage we shouldnt be asked to enter the remote server credential(password)
+At this stage we shouldnt be asked to enter the remote server credential(password), login would automatically!
 
 ```bash
 ssh "yourusername"@192.168.x.x   
@@ -88,7 +89,7 @@ Please note "yourusername" is the the remote server username
 
 ### 8. Create your project
 
-### 9. Secure your project
+### 9. Secure your project and neccary permission
 
 ### 10. create Hosts file
 
@@ -112,7 +113,7 @@ Please note "yourusername" is the the remote server username
       ansible.builtin.debug
         var: uptime_output.stdout
 
-### 12. excute the script for automation
+### 12. execute the script for automation
 
 ```bash
 ansible-playbook -i hosts check_ uptime.yml
@@ -135,3 +136,4 @@ Success: All servers uptime were remotely monitored (please see the screenshot i
 - UFW firewall
 - ICMP ech requests
 - 3 ways handshakes 
+- ed25519 algorithm
